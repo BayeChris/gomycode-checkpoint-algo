@@ -1,0 +1,32 @@
+ALGORITHM reading_sentence
+VAR
+    nbc,nbm,nbv : INTEGER;
+    str,b: STRING;
+    c := CHAR;
+    
+BEGIN
+    write("Veuillez entrez la phrase")
+    read(str)
+
+    WHILE (c<>'.') DO
+        nbc:=nbc+1
+        IF (c:='.') THEN
+            nbc:=(nbc+1)+1
+        END_IF
+    END_WHILE
+    write("le nombre de caractères est :" nbc)
+
+    FOR i FROM 0 TO len(str)-1 DO
+        IF (b:=' ' ou b:='.') THEN
+            nbm:=nbm+1
+        END_IF
+    END_FOR
+    write("le nombre de mots est :" nbm)
+
+    FOR i FROM 0 TO len(str)-1 DO
+        IF (str[i]='a' ou str[i]='e' ou str[i]='o' ou str[i]='i' ou str[i]='u') THEN
+            nbv:=nbv+1
+        END_IF
+    END_FOR
+    write("le nombre de voyelles dans la phrase est :" nbv)
+END
